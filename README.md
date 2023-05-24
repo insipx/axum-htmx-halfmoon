@@ -1,4 +1,4 @@
-# A template to get you started writing a Axum/HTMX based website with Halfmoon CSS
+# A template to get you started writing a Axum/HTMX based website with Halfmoon CSS and Askama templates
 
 Static files are available in `site/`
 Askama templates in `templates`
