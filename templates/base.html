@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- FAVICON <link rel="icon" href="path/to/fav.png"> -->
     <title>{% block title %}{% endblock %}</title>
+
     <script src="static/vendored/js/htmx-1.9.2.min.js"></script>
     <link href="static/vendored/css/halfmoon-variables-1.1.1.min.css" rel="stylesheet" />
     {% block head %}{% endblock %}
   </head>
-  <body>
-    {% block body %}{% endblock %} 
+  <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+    
+    {% include "components/modals.html" %}
+    <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom">
+      
+      {% include "components/alerts.html" %}
+      {% include "components/navbar.html" %}
+      {% include "components/sidebar.html" %}
+
+      <div class="content-wrapper">
+	{% block content %}{% endblock %} 
+	<!--
+	  Add your page's main content here
+	  Examples:
+	  1. https://www.gethalfmoon.com/docs/content-and-cards/#building-a-page
+	  2. https://www.gethalfmoon.com/docs/grid-system/#building-a-dashboard
+	-->
+      </div>
+      
+      {% include "components/footer.html" %}
+    </div>
     <script src="static/vendored/js/halfmoon-1.1.1.min.js"></script>
   </body>
 </html>

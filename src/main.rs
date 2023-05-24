@@ -38,7 +38,7 @@ async fn main() {
 async fn homepage() -> HomepageTemplate<'static> {
     HomepageTemplate {
         title: "Homepage",
-        header: "Yo, o.",
+        header: "Yo.",
     }
 }
 
